@@ -1,22 +1,12 @@
-var quarto = {
-	padrao: "Testando isso",
-	apagado: "tudo escuro kkk"
+var tempo = 0;
+
+function printTime() {
+	  document.getElementById('main').innerHTML += "<p>" + tempo + "</p>";
 }
 
-printContent = function (targetRoom, targetState, printType){
-	if (printType == 'add') {
-
-	  document.getElementById('main').innerHTML += "<p>" + targetRoom[targetState] + "</p>";
-
-
-	
-	} else if (printType == 'replace') {
-	  document.getElementById('main').innerHTML = "<p>" + targetRoom[targetState] + "</p>";
-	}
+function addTime(time) {
+	 tempo += time;
+	 horas = tempo / 60;
+	 document.getElementById('main').innerHTML += "<p>minutos: " + tempo + "</p>";
+	 document.getElementById('main').innerHTML += "<p>horas: " + horas + "</p>";
 }
-
-testContent = function () {
-	//document.getElementById('teste').innerHTML = 'Oi';
-	 document.getElementById('main').innerHTML = quarto.padrao;
-}
-
