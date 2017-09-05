@@ -3,8 +3,8 @@
 	lightsOn: false,
 	aceso: 
 		`<p> É o seu quarto. Ele está bem arrumadinho, até a 
-		<span class="inspect" onclick="describe('cama')">cama</span> está feita. <br>
-		Ele é pequeno, mas aconchegante...	Olhar pra ele assim, com atenção, faz você lembrar de como gosta dele...</p>
+		<span class="inspect" onclick="describe('cama')">cama</span> está feita. Ele é pequeno, mas aconchegante.	
+		Olhar pra ele assim, com atenção, faz você lembrar de como gosta desse espacinho apertado...</p>
 		<p> Mas também parece que tem alguma coisa errada, mesmo que você não saiba exatamente <i>o quê</i> é...</p>`,
 	escuro: 
 		`<p>Você se percebe de pé num quarto absolutamente escuro.</p>
