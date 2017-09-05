@@ -1,45 +1,47 @@
 	var quarto = {
 	visitas: 0,
 	lightsOn: false,
-	aceso: `<p> É o seu quarto. Ele está bem arrumadinho, até a <span class="inspect" onclick="describe()">cama</span> está feita. <br>
-	 pequeno, mas aconchegante...	Olhar pra ele assim, com atenção, faz você lembrar de como gosta dele...</p>
-	<p> Mas também parece que tem alguma coisa errada, mesmo que você não saiba exatamente <i>o quê</i> é...</p>`,
-	escuro: `<p>Você se percebe de pé num quarto absolutamente escuro.</p>
-	<p>A última coisa de que se lembra é de ter apagado as luzes para ir dormir, mas de alguma maneira isso parece uma memória distante.</p>
-	<p> Algo - você não sabe exatamente <i>o quê</i> - faz você se sentir que não está em casa... Você se dá conta que seu braço está estendido e seu dedo sobre o interruptor.</p>`,
-	idle: `<p> Quanto mais tempo cê passa aqui, mais estranho tudo parece...</p>`,
+	aceso: 
+		`<p> É o seu quarto. Ele está bem arrumadinho, até a 
+		<span class="inspect" onclick="describe('cama')">cama</span> está feita. <br>
+		Ele é pequeno, mas aconchegante...	Olhar pra ele assim, com atenção, faz você lembrar de como gosta dele...</p>
+		<p> Mas também parece que tem alguma coisa errada, mesmo que você não saiba exatamente <i>o quê</i> é...</p>`,
+	escuro: 
+		`<p>Você se percebe de pé num quarto absolutamente escuro.</p>
+		<p>A última coisa de que se lembra é de ter apagado as luzes para ir dormir, mas de alguma maneira isso parece uma memória distante.</p>
+		<p> Algo - você não sabe exatamente <i>o quê</i> - faz você se sentir que não está em casa... Você se dá conta que seu braço está estendido e seu dedo sobre o interruptor.</p>`,
+	idle: 
+		`<p> Quanto mais tempo cê passa aqui, mais estranho tudo parece... Você sente seu corpo paralizado... <br>
+		Será medo? Não importa, o fato é que não consegue se mexer. </p>`,
 	volta: `<p> Você dá uma volta no seu quarto. </p>`,
-
 	cama: "<p> Bem, é sua cama. É macia e foi barata... Não tem porque não amar.</p>"
 }
 
 
 var description, buttons;
 var complemento = "";
-
+var timeLimit = 8;
 
 function Quarto() {
-
 	resetButton();
 
 	if (quarto.lightsOn == false) {
-
+		complemento ="";
 		description = quarto.escuro;
-		btnFunc = "acenderLuz()";
-		btnLabel = "Acender as luzes";
-		addButton();
+		addButton("Acender as luzes", "acenderLuz(currentRoom)");
+		quarto.escuro = 
+			`<p> Você se percebe de pé num quarto absolutamente escuro...</p>
+			<p>O que não é muito surpreendente, já que você acabou de apagar a luz.</p>`;
 
-	} else if (quarto.visitas < 5) {
+	} else if (quarto.visitas < timeLimit) {
 		description =  quarto.aceso;
-		btnFunc = "darRole()";
-		btnLabel = "Dar uma volta no quarto";
-		addButton();
+		addButton("Dar uma volta no quarto", "darRole()");
+		addButton("Apagar as luzes", "acenderLuz(currentRoom)");
 
-	} else {
+	} else if (quarto.lightsOn == true) {
+		description =  quarto.aceso;
 		complemento += quarto.idle;
-		btnFunc = "clear()";
-		btnLabel = "Que estranho!";
-		addButton();
+		addButton("Ficar em silêncio e esperar pela morte", "clear()")
 	}
 
 	printContent (description, complemento, buttons);
@@ -47,8 +49,8 @@ function Quarto() {
 
 }
 
-function acenderLuz() {
-	quarto.lightsOn = true;
+function acenderLuz(room) {
+	quarto.lightsOn = !quarto.lightsOn;
 	Quarto();
 }
 
@@ -58,16 +60,19 @@ function darRole() {
 	Quarto();
 }
 
-function addButton(){
-		buttons += `<button onclick="${ btnFunc }">${ btnLabel }</button>`;
+function addButton(x, y){
+	btnLabel = x;
+	btnFunc = y;
+	buttons += `<button onclick="${ btnFunc }">${ btnLabel }</button>`;
 }
 
 function resetButton(){
 	buttons = "";
-
 }
 
-function describe(){
-	complemento = quarto.cama;
-Quarto();
+function describe(x){
+	complemento = quarto[x];
+	printContent (description, complemento, buttons);
 }
+
+
