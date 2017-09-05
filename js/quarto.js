@@ -1,4 +1,6 @@
 	var quarto = {
+	visitas: 0,
+	lightsOn: false,
 	aceso: 
 		`<p> É o seu quarto. Ele está bem arrumadinho, até a 
 		<span class="inspect" onclick="describe('cama')">cama</span> está feita. Ele é pequeno, mas aconchegante.	
@@ -16,18 +18,14 @@
 }
 
 
-
 var description, buttons;
 var complemento = "";
-var visitas = 0;
 var timeLimit = 8;
-var lightsOn = false;
-
 
 function Quarto() {
 	resetButton();
 
-	if (lightsOn == false) {
+	if (quarto.lightsOn == false) {
 		complemento ="";
 		description = quarto.escuro;
 		addButton("Acender as luzes", "acenderLuz(currentRoom)");
@@ -35,24 +33,24 @@ function Quarto() {
 			`<p> Você se percebe de pé num quarto absolutamente escuro...</p>
 			<p>O que não é muito surpreendente, já que você acabou de apagar a luz.</p>`;
 
-	} else if (visitas < timeLimit) {
+	} else if (quarto.visitas < timeLimit) {
 		description =  quarto.aceso;
 		addButton("Dar uma volta no quarto", "darRole()");
 		addButton("Apagar as luzes", "acenderLuz(currentRoom)");
 
-	} else if (lightsOn == true) {
+	} else if (quarto.lightsOn == true) {
 		description =  quarto.aceso;
 		complemento += quarto.idle;
 		addButton("Ficar em silêncio e esperar pela morte", "clear()")
 	}
 
 	printContent (description, complemento, buttons);
-	visitas ++;
+	quarto.visitas ++;
 
 }
 
 function acenderLuz(room) {
-	lightsOn = !lightsOn;
+	quarto.lightsOn = !quarto.lightsOn;
 	Quarto();
 }
 
