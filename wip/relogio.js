@@ -9,6 +9,6 @@ function addTime(time) {
 	 horas = Math.floor(tempo / 60);
 
 	 minutos = tempo % 60;
-	 document.getElementById('main').innerHTML += "<p>minutos: " + tempo + "</p>";
+	 document.getElementById('main').innerHTML = "<p>minutos: " + tempo + "</p>";
 	 document.getElementById('main').innerHTML += `<p>horas: ${horas}h ${minutos}min </p><br>`;
 }

@@ -1,0 +1,29 @@
+* {
+    font-family: Arial;
+}
+
+#main {
+    color: blue;
+}
+
+#teste {
+    color: green;
+}
+
+button {
+  color: #FFF;
+  background-color: #FA8072;
+  border: 0;
+  display: inline-block;
+  height: 48px;
+  padding: 0 30px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
