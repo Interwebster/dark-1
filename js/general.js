@@ -4,10 +4,11 @@ var currentRoom;
 
 var description, complemento, buttons;
 var timeLimit = 8;
+var contador = 0;
 
 printContent = function(x, y, z) {
 	document.getElementById('descricao').innerHTML = x;
-	document.getElementById('complementos').innerHTML = y;
+	document.getElementById('complemento').innerHTML = y;
 	document.getElementById('botoes').innerHTML = z;
 }
 
@@ -22,7 +23,9 @@ function resetButton() {
 }
 
 function resetContent (){
-	description, complemento, buttons = "";
+	description = "";
+	complemento = "";
+	buttons = "";
 }
 
 function describe(object) {
