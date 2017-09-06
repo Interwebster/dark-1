@@ -1,4 +1,4 @@
-var quarto = {
+quarto = {
 	visitas: 0,
 	lightsOn: false,
 	aceso: 
@@ -18,7 +18,7 @@ var quarto = {
 }
 
 function Quarto() {
-	resetButton();
+	resetContent();
 
 	if (quarto.lightsOn == false) {
 		complemento ="";
@@ -32,6 +32,7 @@ function Quarto() {
 		description =  quarto.aceso;
 		addButton("Dar uma volta no quarto", "darRole()");
 		addButton("Apagar as luzes", "acenderLuz(currentRoom)");
+		addButton("Ir para a sala", "Sala()")
 
 	} else if (quarto.lightsOn == true) {
 		description =  quarto.aceso;

@@ -1,6 +1,6 @@
 var quarto = {};
 var sala = {};
-currentRoom = quarto;
+var currentRoom;
 
 var description, complemento, buttons;
 var timeLimit = 8;
@@ -19,6 +19,10 @@ function addButton(x, y) {
 
 function resetButton() {
 	buttons = "";
+}
+
+function resetContent (){
+	description, complemento, buttons = "";
 }
 
 function describe(object) {
