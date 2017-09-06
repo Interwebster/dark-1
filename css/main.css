@@ -1,20 +1,18 @@
 * {
     font-family: Arial;
-    background-color: rgba(0,0,0,0.1);
+    /* background-color: rgba(0,0,0,0.1); /* use pra debugar */
 }
 
 .inspect {
 font-weight: bold;
 cursor: pointer;
 }
-
-.inspect:hover{
-color: blue;
-}
-
-.inspect: active{
-  color: red;
-}
+    .inspect:hover{
+    color: blue;
+    }
+    .inspect: active{
+      color: red;
+    }
 
 #complementos {
   font-style: italic;
@@ -57,3 +55,10 @@ button {
   box-sizing: border-box;
   margin: 10px auto;
 }
+  button:hover{
+    background-color: #F77567;
+  }
+  button:active{
+    background-color: #c75d51;
+    
+  }

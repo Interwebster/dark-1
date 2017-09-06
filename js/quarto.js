@@ -1,9 +1,9 @@
-	var quarto = {
+var quarto = {
 	visitas: 0,
 	lightsOn: false,
 	aceso: 
 		`<p> É o seu quarto. Ele está bem arrumadinho, até a 
-		<span class="inspect" onclick="describe('cama')">cama</span> está feita. Ele é pequeno, mas aconchegante.	
+		<span class="inspect" onclick="describeThis('cama')">cama</span> está feita. Ele é pequeno, mas aconchegante.	
 		Olhar pra ele assim, com atenção, faz você lembrar de como gosta desse espacinho apertado...</p>
 		<p> Mas também parece que tem alguma coisa errada, mesmo que você não saiba exatamente <i>o quê</i> é...</p>`,
 	escuro: 
@@ -16,11 +16,6 @@
 	volta: `<p> Você dá uma volta no seu quarto. </p>`,
 	cama: "<p> Bem, é sua cama. É macia e foi barata... Não tem porque não amar.</p>"
 }
-
-
-var description, buttons;
-var complemento = "";
-var timeLimit = 8;
 
 function Quarto() {
 	resetButton();
@@ -46,10 +41,9 @@ function Quarto() {
 
 	printContent (description, complemento, buttons);
 	quarto.visitas ++;
-
 }
 
-function acenderLuz(room) {
+function acenderLuz() {
 	quarto.lightsOn = !quarto.lightsOn;
 	Quarto();
 }
@@ -59,20 +53,3 @@ function darRole() {
 	quarto.volta = "Você dá outra volta no seu quarto.";
 	Quarto();
 }
-
-function addButton(x, y){
-	btnLabel = x;
-	btnFunc = y;
-	buttons += `<button onclick="${ btnFunc }">${ btnLabel }</button>`;
-}
-
-function resetButton(){
-	buttons = "";
-}
-
-function describe(x){
-	complemento = quarto[x];
-	printContent (description, complemento, buttons);
-}
-
-
