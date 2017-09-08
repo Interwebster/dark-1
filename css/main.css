@@ -1,5 +1,5 @@
 * {
-    font-family: Arial;
+    font-family: Lato;
     /* background-color: rgba(0,0,0,0.1); /* use pra debugar */
 }
 
@@ -8,13 +8,13 @@ font-weight: bold;
 cursor: pointer;
 }
     .inspect:hover{
-    color: blue;
+    color: #FA8072;
     }
-    .inspect: active{
-      color: red;
+    .inspect:active{
+      color: #c75d51;
     }
 
-#complementos {
+#complemento {
   font-style: italic;
 }
 
@@ -62,3 +62,16 @@ button {
     background-color: #c75d51;
     
   }
+
+  button.context {
+    color:#FA8072;
+    background-color: white;
+    border: 1px;
+    border-style: solid;
+    border-color:#FA8072;
+  }
+    button.context:hover{
+    background-color: #f1f1f1;
+    }
+    button.context:active{
+    }
