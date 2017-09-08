@@ -1,6 +1,7 @@
 quarto = {
 	visitas: 0,
 	lightsOn: false,
+	titulo: "Quarto",
 	aceso: 
 		`<p> É o seu quarto. Ele está bem arrumadinho, até a 
 		<span class="inspect" onclick="describeThis('cama')">cama</span> está feita. Ele é pequeno, mas aconchegante.	
@@ -19,6 +20,7 @@ quarto = {
 
 function Quarto() {
 	resetContent();
+	currentRoom = quarto;
 
 	if (quarto.lightsOn == false) {
 		complemento ="";
