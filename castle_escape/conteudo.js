@@ -1,4 +1,4 @@
-quarto = {
+var quarto = {
 	titulo: "Quarto",
     intro: `<p> Você acorda no seu quarto. O sol ilumina o cômodo ao passar pelas barras da janela.
     A sensação é de ter dormido durante uma eternidade...</p>` ,
@@ -39,11 +39,11 @@ function Quarto () {
 	if (contador == 0) {
 		roomState("intro");
 		contador++;
-		addButton("Levantar", "Quarto()");
+		button.add("Levantar", "Quarto()");
 
 	} else { 
 		roomState("padrao");
-		addButton("Teste", "Quarto()");
+		button.add("Teste", "Quarto()");
 	}
 
 	function janela(){

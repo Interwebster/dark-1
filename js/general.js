@@ -22,20 +22,19 @@ printContent = function(x, y, z) { // imprime o conteúdo na tela
 	document.getElementById('botoes').innerHTML = buttons + contextButtons;
 }
 
-function addButton(x, y) { // cria um botão e adiciona a variávei buttons
-	btnLabel = x;
-	btnFunc = y;
-	buttons += `<button class="basic" onclick="${ btnFunc }">${ btnLabel }</button>`;
-}
+var button = {
+	add: function (label, result) { 
+		buttons += 
+		`<button class="basic" onclick="${ result }">${ label }</button>`
+		},
 
-function addContextButton(x, y) { // cria um botão e adiciona a variávei buttons
-	btnLabel = x;
-	btnFunc = y;
-	contextButtons += `<button class="context" onclick="${ btnFunc }">${ btnLabel }</button>`;
-}
-
-function resetButton() { //reseta apenas os botões
-	buttons = "";
+	addContext: function (label, result) { 
+	contextButtons += 
+	`<button class="context" onclick="${ result }">${ label }</button>`;
+	},
+	reset: function () { 
+		buttons = "";
+	}
 }
 
 function resetContent (){ // reseta todos os campos de conteúdo
@@ -53,7 +52,7 @@ function describe(object) { // descreve algo no campo complemento
 	if (botoesContextuais[object] != undefined) { // verifica se o complemento em questão possui botões contextuais
 		x = botoesContextuais[object][0];
 		y = botoesContextuais[object][1];
-		addContextButton (x, y);
+		button.addContext (x, y);
 	}
 	printContent (description, complemento, buttons);
 }

@@ -1,3 +1,20 @@
+IMPLEMENTADOS
+>> 
+
+ROADMAP
+>> passagem de tempo
+	** contar a passagem de tempo
+	** dividir o jogo em estágios, definidos pelo tempo passado
+	** adicionar um texto fixo ao final das descrições que depende de quanto tempo passou
+	-- mudar algumas descrições de acordo com o estágio do jogo (1,2,3 - dependem do tempo decorrido)
+	>> acabar o jogo no estágio 3
+	>> reiniciar o jogo depois do estágio 3
+	>> manter algumas variáveis mesmo depois de reiniciar o jogo da maneira anterior
+>> inventário (quebrar em outras tarefas)	
+>> eventos
+	>> aparecer uma descrição como resultado de uma ação. depois de um tempo, acontecer outra coisa.
+	>>ou, como alternativa, escrever um parágrafo de cada vez.
+
 FEATURE
 
 # MECANICAS DE JOGO
