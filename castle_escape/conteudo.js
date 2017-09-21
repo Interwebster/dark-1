@@ -59,7 +59,3 @@ function Deitar () {
 	Quarto();
 
 }
-
-console.log(botoesContextuais.cama);
-console.log(botoesContextuais.abs);
-

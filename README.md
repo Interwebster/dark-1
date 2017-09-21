@@ -1,5 +1,5 @@
 IMPLEMENTADOS
->> 
+>> juntei as funções de botão em um objeto 
 
 ROADMAP
 >> passagem de tempo
@@ -14,6 +14,8 @@ ROADMAP
 >> eventos
 	>> aparecer uma descrição como resultado de uma ação. depois de um tempo, acontecer outra coisa.
 	>>ou, como alternativa, escrever um parágrafo de cada vez.
+>> efeito typewriter
+	>> só da primeira vez que um texto aoparecer
 
 FEATURE
 
